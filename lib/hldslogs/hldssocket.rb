@@ -18,7 +18,7 @@ module Hldslogs
         data = paket[0]
         data.gsub!("\xFF\xFF\xFF\xFFlog ", "")
         data.gsub!("\n\x00", "")
-        puts data
+        return data
       end
     end
   end
