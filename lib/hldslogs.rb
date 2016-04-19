@@ -1,5 +1,4 @@
 require "hldslogs/version"
-require "socket"
 require "hldslogs/hldssocket"
 
 

@@ -1,6 +1,6 @@
 require "hldslogs/version"
 require "socket"
-require "/hldslogs/hldssocket"
+require "hldslogs/hldssocket"
 
 
 module Hldslogs

@@ -1,3 +1,5 @@
+require "socket"
+
 module Hldslogs
   class HldsSocket
     def initialize(ip_addr, port, bind_port)
