@@ -11,11 +11,9 @@ module Hldslogs
        @socket.close
        return true
     end
-    def receve_data
-       until @socket == nil do
+    def receve_data       
          data = @socket.recvfrom(1400)
          data[0]
-       end
     end
   end
 end
