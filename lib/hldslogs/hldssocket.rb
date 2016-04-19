@@ -12,8 +12,7 @@ module Hldslogs
        return true
     end
     def receve_data       
-         data = @socket.recvfrom(1400)
-         data[0]
+       data = @socket.recvfrom(1400)
     end
   end
 end
