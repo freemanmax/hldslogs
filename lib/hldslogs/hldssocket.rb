@@ -12,7 +12,13 @@ module Hldslogs
        return true
     end
     def receve_data       
-       data = @socket.recvfrom(1400)
+       paket = @socket.recvfrom(1400)
+       data = paket[0]
+       # encoding: US-ASCII
+       data.gsub!("\xFF\xFF\xFF\xFFlog ", "")
+       # encoding: US-ASCII
+       data.gsub!("\n\x00", "")
     end
   end
 end
+
