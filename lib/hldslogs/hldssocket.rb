@@ -1,3 +1,4 @@
+# encoding: US-ASCII
 require "socket"
 
 module Hldslogs
@@ -14,7 +15,6 @@ module Hldslogs
     def receve_data       
        paket = @socket.recvfrom(1400)
        data = paket[0]
-       data.encode(Encoding::US-ASCII)
        data.gsub!("\xFF\xFF\xFF\xFFlog ", "")
        data.gsub!("\n\x00", "")
     end
