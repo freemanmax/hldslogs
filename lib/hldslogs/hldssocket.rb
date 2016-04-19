@@ -12,11 +12,13 @@ module Hldslogs
        @socket.close
        return true
     end
-    def receve_data       
-       paket = @socket.recvfrom(1400)
-       data = paket[0]
-       data.gsub!("\xFF\xFF\xFF\xFFlog ", "")
-       data.gsub!("\n\x00", "")
+    def receve_data
+      until @socket == nil do       
+        paket = @socket.recvfrom(1400)
+        data = paket[0]
+        data.gsub!("\xFF\xFF\xFF\xFFlog ", "")
+        data.gsub!("\n\x00", "")
+      end
     end
   end
 end
