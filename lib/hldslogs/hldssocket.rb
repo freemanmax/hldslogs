@@ -1,7 +1,7 @@
 # encoding: US-ASCII
 require "socket"
 
-module Hldslogs
+
   class HldsSocket
     def initialize(ip_addr, port, bind_port)
        @socket = UDPSocket.new
@@ -19,5 +19,5 @@ module Hldslogs
        data.gsub!("\n\x00", "")
     end
   end
-end
+
 
