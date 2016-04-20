@@ -1,8 +1,8 @@
 # Hldslogs
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/hldslogs`. To experiment with that code, run `bin/console` for an interactive prompt.
+Hldslogs gem is Counter-Strike 1.6 Server logs recever, the gem use UDP Socket to receve the
+data or the log files from Counter-Strike 1.6 Server.
 
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
@@ -14,26 +14,40 @@ gem 'hldslogs'
 
 And then execute:
 
-    $ bundle
+```
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install hldslogs
+```
+$ gem install hldslogs
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+To use this game you have first to installet the gem.
+Use this example, create new ruby file logs.rb and put this in it:
 
-## Development
+```ruby
+require 'hldslogs'
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+@conn = HldsSocket.new("192.168.0.1", 27015, 28015)
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+until @conn.socket == nil do
+  logs = @conn.receve_data
+  puts logs
+end
+```
 
-## Contributing
+In your Counter-Strike 1.6 Server console add the ip and bind port from the socket with this command:
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/hldslogs.
+```
+logaddress_add 192.168.0.1 28015
+```
 
+After this run the file in terminal, make sure that your terminal directory is where the file is located
+and after this run ruby logs.rb. If everything go well you should get the server logs in terminal.
 
 ## License
 
