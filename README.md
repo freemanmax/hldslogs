@@ -32,6 +32,18 @@ Use this example, create new ruby file logs.rb and put this in it:
 ```ruby
 require 'hldslogs'
 
+@conn = LogsHlds.new("192.168.0.1", 27015, 28015)
+
+until @conn.socket == nil do
+  logs = @conn.receve_data
+  puts logs
+end
+```
+For 0.2.2 version or below version make logs.rb file like this:
+
+```ruby
+require 'hldslogs'
+
 @conn = HldsSocket.new("192.168.0.1", 27015, 28015)
 
 until @conn.socket == nil do
@@ -46,7 +58,7 @@ In your Counter-Strike 1.6 Server console add the ip and bind port from the sock
 logaddress_add 192.168.0.1 28015
 ```
 
-After this run the file in terminal, make sure that your terminal directory is where the file is located
+After this run the logs.rb file in terminal, make sure that your terminal directory is where the file is located
 and after this run ruby logs.rb. If everything go well you should get the server logs in terminal.
 
 ## License

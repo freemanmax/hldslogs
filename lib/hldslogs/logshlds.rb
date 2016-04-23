@@ -1,7 +1,7 @@
 # encoding: US-ASCII
 require "socket"
 
-class HldsSocket
+class LogsHlds
   def initialize(ip_addr, port, bind_port)
      @socket = UDPSocket.new
      @socket.bind "", bind_port
