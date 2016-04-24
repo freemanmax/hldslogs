@@ -1,6 +1,6 @@
 # Hldslogs
 
-Hldslogs gem is Counter-Strike 1.6 Server logs recever, the gem use UDP Socket to receve the
+Hldslogs gem is Counter-Strike 1.6 Server logs receiver, the gem use UDP Socket to receive the
 data or the log files from Counter-Strike 1.6 Server.
 
 

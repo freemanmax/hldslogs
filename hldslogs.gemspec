@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["freemanmax"]
   spec.email         = ["nenadstojkovikj@gmail.com"]
 
-  spec.summary       = %q{Hldslogs is a Counter-Strike 1.6 Server logs recever.}
-  spec.description   = %q{Hldslogs receve logs from Counter-Strike 1.6 Server.}
+  spec.summary       = %q{Hldslogs is a Counter-Strike 1.6 Server logs receiver.}
+  spec.description   = %q{Hldslogs receive logs from Counter-Strike 1.6 Server.}
   spec.homepage      = "https://github.com/freemanmax/hldslogs"
   spec.license       = "MIT"
 
